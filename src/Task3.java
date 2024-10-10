@@ -2,7 +2,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Task3 {
-    public static String listNums(int x) {
+    public  String listNums(int x) {
         if (x < 0) {
             return "Ошибка: N не может быть отрицательным.";
         }
@@ -15,7 +15,7 @@ public class Task3 {
         return result.toString().trim();
     }
 
-    public static String chet(int x) {
+    public  String chet(int x) {
         if (x < 0) {
             return "Ошибка: N не может быть отрицательным.";
         }
@@ -27,7 +27,7 @@ public class Task3 {
         return result.toString().trim();
     }
 
-    public static int numLen(long x) {
+    public  int numLen(long x) {
         if (x == 0) {
             return 1;
         }
@@ -40,7 +40,7 @@ public class Task3 {
         return count;
     }
 
-    public static void square(int x) {
+    public  void square(int x) {
         if (x < 0) {
             System.out.println("Ошибка: размер квадрата не может быть отрицательным.");
             return;
@@ -54,22 +54,19 @@ public class Task3 {
         }
     }
 
-    public static void rightTriangle(int x) {
+    public  void rightTriangle(int x) {
         if (x < 0) {
             System.out.println("Ошибка: высота треугольника не может быть отрицательной.");
             return;
         }
 
         for (int i = 1; i <= x; i++) {
-            // Выводим пробелы
             for (int j = 0; j < x - i; j++) {
                 System.out.print(" ");
             }
-            // Выводим символы '*'
             for (int k = 0; k < i; k++) {
                 System.out.print("*");
             }
-            // Переход на новую строку
             System.out.println();
         }
     }
@@ -98,7 +95,7 @@ public class Task3 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
+        Task3 task3 = new Task3();
         while (true) {
             System.out.println("Выберите действие:");
             System.out.println("1. Вывести числа от 0 до N");
@@ -114,32 +111,32 @@ public class Task3 {
                 case 1:
                     System.out.print("Введите N: ");
                     int nList = getValidIntInput(scanner);
-                    System.out.println("Числа от 0 до " + nList + ": " + listNums(nList));
+                    System.out.println("Числа от 0 до " + nList + ": " + task3.listNums(nList));
                     break;
 
                 case 2:
                     System.out.print("Введите N: ");
                     int nEven = getValidIntInput(scanner);
-                    System.out.println("Четные числа от 0 до " + nEven + ": " + chet(nEven));
+                    System.out.println("Четные числа от 0 до " + nEven + ": " + task3.chet(nEven));
                     break;
 
                 case 3:
                     System.out.print("Введите число для определения длины: ");
                     long numberLength = getValidLongInput(scanner);
-                    int length = numLen(numberLength);
+                    int length = task3.numLen(numberLength);
                     System.out.println("Длина числа: " + length);
                     break;
 
                 case 4:
                     System.out.print("Введите размер квадрата: ");
                     int squareSize = getValidIntInput(scanner);
-                    square(squareSize);
+                    task3.square(squareSize);
                     break;
 
                 case 5:
                     System.out.print("Введите высоту треугольника: ");
                     int triangleHeight = getValidIntInput(scanner);
-                    rightTriangle(triangleHeight);
+                    task3.rightTriangle(triangleHeight);
                     break;
 
                 case 0:

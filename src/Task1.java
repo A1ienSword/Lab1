@@ -5,23 +5,23 @@ public class Task1 {
     /**
      * Задание 1
      */
-    public static boolean isEqual(int a, int b, int c) {
+    public boolean isEqual(int a, int b, int c) {
         return (a == b) && (b == c);
     }
 
-    public static boolean isInRange(int a, int b, int num) {
+    public boolean isInRange(int a, int b, int num) {
         return num >= Math.min(a, b) && num <= Math.max(a, b);
     }
 
-    public static boolean is2Digits(int x) {
+    public boolean is2Digits(int x) {
         return x >= 10 && x <= 99;
     }
 
-    public static int charToNum(char x) {
+    public int charToNum(char x) {
         return x - '0';
     }
 
-    public static double fraction(double x) {
+    public double fraction(double x) {
         return x % 1;
     }
 
@@ -61,7 +61,7 @@ public class Task1 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
+        Task1 task1 = new Task1();
         while (true) {
             System.out.println("Выберите действие:");
             System.out.println("1. Проверить равенство трех чисел");
@@ -78,7 +78,7 @@ public class Task1 {
                     int a = getValidIntInput(scanner);
                     int b = getValidIntInput(scanner);
                     int c = getValidIntInput(scanner);
-                    boolean equalResult = isEqual(a, b, c);
+                    boolean equalResult = task1.isEqual(a, b, c);
                     System.out.println("Результат проверки равенства: " + equalResult);
                     break;
 
@@ -87,14 +87,14 @@ public class Task1 {
                     int x1 = getValidIntInput(scanner);
                     int x2 = getValidIntInput(scanner);
                     int num = getValidIntInput(scanner);
-                    boolean rangeResult = isInRange(x1, x2, num);
+                    boolean rangeResult = task1.isInRange(x1, x2, num);
                     System.out.println("Число " + num + " в диапазоне: " + rangeResult);
                     break;
 
                 case 3:
                     System.out.print("Введите число для проверки: ");
                     int twoDigitNumber = getValidIntInput(scanner);
-                    boolean twoDigitResult = is2Digits(twoDigitNumber);
+                    boolean twoDigitResult = task1.is2Digits(twoDigitNumber);
                     System.out.println("Число " + twoDigitNumber + " двузначное: " + twoDigitResult);
                     break;
 
@@ -102,7 +102,7 @@ public class Task1 {
                     System.out.print("Введите символ для преобразования: ");
                     char character = getValidCharInput(scanner);
                     if (character >= '0' && character <= '9') { // Check if the character is a digit
-                        int numberFromChar = charToNum(character);
+                        int numberFromChar = task1.charToNum(character);
                         System.out.println("Число из символа '" + character + "': " + numberFromChar);
                     } else {
                         System.out.println("Ошибка: введенный символ не является цифрой.");
@@ -112,7 +112,7 @@ public class Task1 {
                 case 5:
                     System.out.print("Введите число для получения дробной части: ");
                     double decimalNumber = getValidDoubleInput(scanner);
-                    double fractionResult = fraction(decimalNumber);
+                    double fractionResult = task1.fraction(decimalNumber);
                     System.out.println("Дробная часть числа " + decimalNumber + ": " + fractionResult);
                     break;
 

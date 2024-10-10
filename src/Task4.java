@@ -2,7 +2,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Task4 {
-    public static int findFirst(int[] arr, int x) {
+    public int findFirst(int[] arr, int x) {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == x) {
                 return i;
@@ -11,7 +11,7 @@ public class Task4 {
         return -1;
     }
 
-    public static int maxAbs(int[] arr) {
+    public int maxAbs(int[] arr) {
         int max = arr[0];
         for (int num : arr) {
             if (Math.abs(num) > Math.abs(max)) {
@@ -21,7 +21,7 @@ public class Task4 {
         return max;
     }
 
-    public static int[] add(int[] arr, int[] ins, int pos) {
+    public int[] add(int[] arr, int[] ins, int pos) {
         if (pos < 0 || pos > arr.length) {
             pos = arr.length ;
         }
@@ -32,7 +32,7 @@ public class Task4 {
         return result;
     }
 
-    public static int[] reverseBack(int[] arr) {
+    public int[] reverseBack(int[] arr) {
         int[] reversedArray = new int[arr.length];
         for (int i = 0; i < arr.length; i++) {
             reversedArray[i] = arr[arr.length - 1 - i];
@@ -40,7 +40,7 @@ public class Task4 {
         return reversedArray;
     }
 
-    public static int[] findAll(int[] arr, int x) {
+    public int[] findAll(int[] arr, int x) {
         int count = 0;
         for (int value : arr) {
             if (value == x) {
@@ -88,7 +88,7 @@ public class Task4 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
+        Task4 task4 = new Task4();
         while (true) {
             System.out.println("Выберите действие:");
             System.out.println("1. Найти первый индекс элемента в массиве");
@@ -111,7 +111,7 @@ public class Task4 {
                     }
                     System.out.print("Введите элемент для поиска: ");
                     int elementToFind = getValidIntInput(scanner);
-                    int indexFound = findFirst(array1, elementToFind);
+                    int indexFound = task4.findFirst(array1, elementToFind);
                     System.out.println(indexFound != -1 ? "Индекс элемента: " + indexFound : "Элемент не найден.");
                     break;
 
@@ -123,7 +123,7 @@ public class Task4 {
                     for (int i = 0; i < size2; i++) {
                         array2[i] = getValidIntInput(scanner);
                     }
-                    int maxAbsValue = maxAbs(array2);
+                    int maxAbsValue = task4.maxAbs(array2);
                     System.out.println("Максимальное по модулю число: " + maxAbsValue);
                     break;
 
@@ -148,7 +148,7 @@ public class Task4 {
                     int positionToInsert = getValidIntInputNoNeg(scanner);
 
                     try {
-                        int[] resultArray = add(mainArray, insertArray, positionToInsert);
+                        int[] resultArray = task4.add(mainArray, insertArray, positionToInsert);
                         System.out.print("Результирующий массив: ");
                         for (int num : resultArray) {
                             System.out.print(num + " ");
@@ -169,7 +169,7 @@ public class Task4 {
                         arrayToReverse[i] = getValidIntInput(scanner);
                     }
 
-                    int[] reversedArray = reverseBack(arrayToReverse);
+                    int[] reversedArray = task4.reverseBack(arrayToReverse);
                     System.out.print("Развернутый массив: ");
                     for (int num : reversedArray) {
                         System.out.print(num + " ");
@@ -190,7 +190,7 @@ public class Task4 {
                     System.out.print("Введите элемент для поиска индексов: ");
                     elementToFind = getValidIntInput(scanner);
 
-                    int[] foundIndices = findAll(searchArray, elementToFind);
+                    int[] foundIndices = task4.findAll(searchArray, elementToFind);
 
                     if (foundIndices.length > 0) {
                         System.out.print("Индексы элемента: ");
