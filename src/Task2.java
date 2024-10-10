@@ -11,7 +11,7 @@ public class Task2 {
     }
 
     private boolean is2Digits(int x) {
-        return x >= 10 && x <= 99;
+        return (x >= 10 && x <= 99) || (x >= -10 && x <= -99);
     }
 
     private int charToNum(char x) {
