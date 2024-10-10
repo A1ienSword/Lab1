@@ -4,11 +4,11 @@ public class Task2 {
     /**
      * Задание 2
      */
-    public int abs(int x) {
+    private int abs(int x) {
         return (x < 0) ? -x : x;
     }
 
-    public boolean is35(int x) {
+    private boolean is35(int x) {
         boolean divisibleBy3 = (x % 3 == 0);
         boolean divisibleBy5 = (x % 5 == 0);
 
@@ -19,12 +19,12 @@ public class Task2 {
         return divisibleBy3 || divisibleBy5;
     }
 
-    public int max3(int x, int y, int z) {
+    private int max3(int x, int y, int z) {
         int max = (x > y) ? x : y;
         return (max > z) ? max : z;
     }
 
-    public int sum2(int x, int y) {
+    private int sum2(int x, int y) {
         int sum = x + y;
         if (sum >= 10 && sum <= 19) {
             return 20;
@@ -32,7 +32,7 @@ public class Task2 {
         return sum;
     }
 
-    public String day(int x) {
+    private String day(int x) {
         switch (x) {
             case 1:
                 return "понедельник";

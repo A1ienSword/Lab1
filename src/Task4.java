@@ -2,7 +2,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Task4 {
-    public int findFirst(int[] arr, int x) {
+    private int findFirst(int[] arr, int x) {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == x) {
                 return i;
@@ -11,7 +11,7 @@ public class Task4 {
         return -1;
     }
 
-    public int maxAbs(int[] arr) {
+    private int maxAbs(int[] arr) {
         int max = arr[0];
         for (int num : arr) {
             if (Math.abs(num) > Math.abs(max)) {
@@ -21,7 +21,7 @@ public class Task4 {
         return max;
     }
 
-    public int[] add(int[] arr, int[] ins, int pos) {
+    private int[] add(int[] arr, int[] ins, int pos) {
         if (pos < 0 || pos > arr.length) {
             pos = arr.length ;
         }
@@ -32,7 +32,7 @@ public class Task4 {
         return result;
     }
 
-    public int[] reverseBack(int[] arr) {
+    private int[] reverseBack(int[] arr) {
         int[] reversedArray = new int[arr.length];
         for (int i = 0; i < arr.length; i++) {
             reversedArray[i] = arr[arr.length - 1 - i];
@@ -40,7 +40,7 @@ public class Task4 {
         return reversedArray;
     }
 
-    public int[] findAll(int[] arr, int x) {
+    private int[] findAll(int[] arr, int x) {
         int count = 0;
         for (int value : arr) {
             if (value == x) {

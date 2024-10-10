@@ -2,7 +2,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Task3 {
-    public  String listNums(int x) {
+    private  String listNums(int x) {
         if (x < 0) {
             return "Ошибка: N не может быть отрицательным.";
         }
@@ -15,7 +15,7 @@ public class Task3 {
         return result.toString().trim();
     }
 
-    public  String chet(int x) {
+    private  String chet(int x) {
         if (x < 0) {
             return "Ошибка: N не может быть отрицательным.";
         }
@@ -27,7 +27,7 @@ public class Task3 {
         return result.toString().trim();
     }
 
-    public  int numLen(long x) {
+    private  int numLen(long x) {
         if (x == 0) {
             return 1;
         }
@@ -40,7 +40,7 @@ public class Task3 {
         return count;
     }
 
-    public  void square(int x) {
+    private  void square(int x) {
         if (x < 0) {
             System.out.println("Ошибка: размер квадрата не может быть отрицательным.");
             return;
@@ -54,7 +54,7 @@ public class Task3 {
         }
     }
 
-    public  void rightTriangle(int x) {
+    private  void rightTriangle(int x) {
         if (x < 0) {
             System.out.println("Ошибка: высота треугольника не может быть отрицательной.");
             return;

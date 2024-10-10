@@ -5,23 +5,23 @@ public class Task1 {
     /**
      * Задание 1
      */
-    public boolean isEqual(int a, int b, int c) {
+    private boolean isEqual(int a, int b, int c) {
         return (a == b) && (b == c);
     }
 
-    public boolean isInRange(int a, int b, int num) {
+    private boolean isInRange(int a, int b, int num) {
         return num >= Math.min(a, b) && num <= Math.max(a, b);
     }
 
-    public boolean is2Digits(int x) {
+    private boolean is2Digits(int x) {
         return x >= 10 && x <= 99;
     }
 
-    public int charToNum(char x) {
+    private int charToNum(char x) {
         return x - '0';
     }
 
-    public double fraction(double x) {
+    private double fraction(double x) {
         return x % 1;
     }
 
