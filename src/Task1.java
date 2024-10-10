@@ -59,7 +59,7 @@ public class Task1 {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main() {
         Scanner scanner = new Scanner(System.in);
         Task1 task1 = new Task1();
         while (true) {
@@ -117,8 +117,7 @@ public class Task1 {
                     break;
 
                 case 0:
-                    System.out.println("Выход из программы.");
-                    scanner.close();
+                    System.out.println("Выход из задачи 1.");
                     return;
 
                 default:
